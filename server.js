@@ -20,7 +20,7 @@ app.use(express.json());
 //   })
 // );
 app.use((req, res, next) => {
-  console.log("cors");
+  console.log("cors ");
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
     "Access-Control-Allow-Headers",
@@ -32,8 +32,9 @@ app.use("/api/auth", authRoutes);
 app.use("/api/products", productsRoutes);
 app.use("/api/user", userRoutes);
 app.use(cookieParser());
-const port = process.env.SERVERPORT;
-app.listen(port, () => {
+const port = process.env.PORT;
+const localPORT = process.env.SERVERPORT;
+app.listen(port || localPORT, () => {
   console.log("Server listening to " + port);
 });
 
