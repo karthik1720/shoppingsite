@@ -1,0 +1,12 @@
+{
+    "title":"Title1",
+    "price":365,
+    "description":"test description",
+    "image":"asdasdas",
+
+    "rate":3.5,
+    "count":12,
+    "brand":"BrandA",
+    "model":"ModelA",
+    "stock":10
+  }
