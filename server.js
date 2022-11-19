@@ -7,10 +7,18 @@ import { router as userRoutes } from "./routes/userRoutes.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 const app = express();
+
 dotenv.config();
-app.use(cors());
+
 app.use(cookieParser());
 app.use(express.json());
+app.use(
+  cors({
+    origin:
+      "https://6379121451bb0c000878a47f--unique-muffin-54d003.netlify.app/",
+    credentials: true,
+  })
+);
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productsRoutes);
 app.use("/api/user", userRoutes);
