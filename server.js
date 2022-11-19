@@ -20,6 +20,7 @@ app.use(express.json());
 //   })
 // );
 app.use((req, res, next) => {
+  console.log("cors");
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
     "Access-Control-Allow-Headers",
