@@ -5,7 +5,7 @@ import { router as authRoutes } from "./routes/authRoutes.js";
 import { router as productsRoutes } from "./routes/productsRoutes.js";
 import { router as userRoutes } from "./routes/userRoutes.js";
 import cookieParser from "cookie-parser";
-// import cors from "cors";
+import cors from "cors";
 const app = express();
 
 dotenv.config();
@@ -19,6 +19,7 @@ app.use(express.json());
 //     credentials: true,
 //   })
 // );
+app.use(cors());
 app.use((req, res, next) => {
   console.log("cors ");
   res.header("Access-Control-Allow-Origin", "*");
